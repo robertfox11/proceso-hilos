@@ -11,6 +11,10 @@ int main(int argc, char *argv[])
         fprintf(stderr, "USO: %s num_procesos\n", argv[0]);
         exit(1);
     }
+    if (argv[1] == NULL){
+        fprintf(stderr, "Error: no se especificó un número de procesos\n");
+        exit(1);
+    }
     n = atoi(argv[1]);
     for (i = 1; i < n; i++) {
         hijopid = fork();
